@@ -1,0 +1,54 @@
+Django Commands
+
+Create Project-
+>django-admin startproject project_name
+
+Run Server-
+>python manage.py runserver
+
+Create App-
+>python manage.py startapp app_name
+
+Making Connections-
+In project urls.py add an empty path directing to app_name.urls.
+In app urls.py add direct empty path to views.homepage.
+Goto views.py of app and add functions to render html etc.
+
+Make Database Models etc in models.py of app.
+Then migrate the model.
+Migrating the models-
+Migrations are Django's way of propagating changes you make to your models 
+(adding a field, deleting a model, etc.) into your database schema. 
+>python manage.py makemigrations
+>python manage.py migrate
+
+Adding to DB and iterating over it-
+>from app_name.models import Model_name
+View all entries(objects in model)
+>Model_name.objects.all()
+Adding new Entry
+>new_entry=Model_name(.....)
+>new_entry.save()
+Iterating over table entries
+>for itr in Model_name.objects.all():
+
+
+Creating Superuser-
+>python manage.py createsuperuser
+
+Registering the models created (adding to admin)-
+Goto app.admin.
+Add the models.
+
+
+User model in django
+>>from django.contrib.auth.models import User
+
+
+
+
+
+
+
+
+
